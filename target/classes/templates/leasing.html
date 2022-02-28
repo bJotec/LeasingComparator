@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>leasing</title>
+</head>
+
+<link rel="stylesheet" href="/main.css/">
+<link rel="stylesheet" href="/car.css/">
+<link rel="stylesheet" href="/login.css/">
+
+</head>
+<body>
+<div th:replace="fragments.html :: logo" ></div>
+<div th:replace="fragments.html :: menu" ></div>
+
+<div id = "content">
+
+   Długość leasingu
+    <br>
+    <br>
+   <select>
+       <option th:each="choose: ${time}"
+               th:text="${choose.timePeriod}"
+               th:value="${choose.code}">
+       </option>
+   </select>
+<br>
+    <br>
+    <br>
+    
+    <input type="text" placeholder="Wkład Własny">
+    <br>
+
+</div>
+
+
+<div id = "stopka"> &copy;Bjotec 2022 Zapraszamy do kontaktu i współpracy.
+</div>
+
+</body>
+</html>

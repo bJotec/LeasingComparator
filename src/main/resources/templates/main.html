@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN</title>
+</head>
+
+<link rel="stylesheet" href="/main.css/">
+<link rel="stylesheet" href="/car.css/">
+<link rel="stylesheet" href="/login.css/">
+
+</head>
+<body>
+<div th:replace="fragments.html :: logo" ></div>
+<div th:replace="fragments.html :: menu" ></div>
+
+<div id = "content">
+    <div id = "menuLeasing">
+
+    <br>
+    <br>
+    <br>
+    <a href="/leasing" >Leasing Operacyjny</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <a href="/najem">Najem Długoterminowy</a>
+    <br>
+    <br>
+    <br>
+
+
+    </div>
+
+</div>
+
+
+<div id = "stopka"> &copy;Bjotec 2022 Zapraszamy do kontaktu i współpracy.
+</div>
+
+</body>
+</html>

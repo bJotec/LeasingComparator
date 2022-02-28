@@ -1,0 +1,45 @@
+.car {
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 100%;
+    text-align:left;
+    padding:10px;
+    margin: 15px 0;
+    transition: border,background 0.5s;
+    coursor: pointer;
+
+.car:hover {
+    border:1px solid red;
+    background: #ffd4d4 ;
+}
+
+.car .brand {
+ font-size:26px;
+font-weight:bold;
+}
+
+.car .model {
+ font-size:22px;
+ margin:10px 0;
+}
+
+.car .year {
+    display: inline-block;
+    font-size:16px;
+}
+.car .capasity {
+    display: inline-block;
+    margin-left:50px;
+    font-size:16px;
+}
+
+.car .quantity {
+    display: inline-block;
+    margin-left:50px;
+    font-size:16px;
+}
+.car .cart-add {
+    display: inline-block;
+    margin-left:100px;
+    font-size:16px;
+}

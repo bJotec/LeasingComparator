@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/main.css"/>
+    <link rel="stylesheet" href="/car.css/">
+    <link rel="stylesheet" href="/login.css"/>
+    <script src="/validation.js"></script>
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id = "content">
+    <form id="login-form" method="post" onsubmit="return validate()" >
+        <input type="text" placeholder="Login" name="login" id="login">
+        <br>
+        <input type="password" placeholder="Hasło" name="password" id="pass">
+        <br>
+        <input type="submit" value="Zaloguj">
+    </form>
+    <a href="/register">Zarejestruj</a>
+</div>
+
+<div id = "stopka"> &copy;Bjotec 2022 Zapraszamy do kontaktu i współpracy.
+</div>
+</body>
+</html>

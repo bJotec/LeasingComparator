@@ -18,6 +18,7 @@ public class Car {
     private String vin;
     private int quantity;
 
+
     public Car(int id, String brand, String model, int year, int capasity, double price, String vin, int quantity) {
         this.id = id;
         this.brand = brand;

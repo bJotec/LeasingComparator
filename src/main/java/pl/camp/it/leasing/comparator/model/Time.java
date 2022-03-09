@@ -12,13 +12,14 @@ public class Time {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int timePeriod;
-
     private int code;
+    private int ownContribution;
 
-    public Time(int id, int timePeriod, int code) {
+    public Time(int id, int timePeriod, int code, int ownContribution) {
         this.id = id;
         this.timePeriod = timePeriod;
         this.code = code;
+        this.ownContribution = ownContribution;
     }
 
     public Time() {
@@ -46,5 +47,13 @@ public class Time {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getOwnContribution() {
+        return ownContribution;
+    }
+
+    public void setOwnContribution(int ownContribution) {
+        this.ownContribution = ownContribution;
     }
 }

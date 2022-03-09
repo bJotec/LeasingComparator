@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/car.css/">
 <link rel="stylesheet" href="/login.css/">
 
+
 </head>
 <body>
 <div th:replace="fragments.html :: logo" ></div>
@@ -19,18 +20,42 @@
    Długość leasingu
     <br>
     <br>
-   <select>
+    <form method="post">
+    <select>
        <option th:each="choose: ${time}"
                th:text="${choose.timePeriod}"
                th:value="${choose.code}">
        </option>
-   </select>
-<br>
+    </select>
+
     <br>
     <br>
-    
-    <input type="text" placeholder="Wkład Własny">
     <br>
+
+    <input type="text" th:value= "${calculate.ownContribution}"placeholder="Wkład Własny">
+
+    <br>
+    <br>
+    <br>
+
+        <input type="radio" th:each="car: ${car}"
+               th:text="${car.brand}"
+               th:value="${car.price}"
+               ><br>
+        <br>
+        <br>
+
+        <label>Wyrażam zgodę</label>
+        <input type="checkbox" name="isPresent" value="true">
+        <br>
+        <br>
+        <div th:text="" ></div>
+        <input type="submit" value="OK">
+    </form>
+
+    <br>
+
+    <div th:text="" th:value= "${calculate.result}" placeholder="Miesięczna Rata"></div></di>
 
 </div>
 

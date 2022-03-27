@@ -29,7 +29,7 @@ public class CommonController {
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(Model model) {
         model.addAttribute("logged", this.sessionObject.isLogged());
-        return "/main";
+        return "main";
     }
 
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
@@ -39,17 +39,24 @@ public class CommonController {
     }
 
     @RequestMapping(value = "/leasing", method = RequestMethod.GET)
-    public String leasing(Model model, @PathVariable double price, @RequestParam int ownContribution , @PathVariable int code ) {
+    public String leasing(Model model ) {
         model.addAttribute("time", this.leasingService.getTime());
         model.addAttribute("logged", this.sessionObject.isLogged());
         model.addAttribute("car", this.leasingService.getCar());
-        model.addAttribute("calculate", this.leasingService.Calculate(code,ownContribution, price));
-        return "redirect:/leasing";
+       /* model.addAttribute("calculate", this.leasingService.Calculate(code,ownContribution, price));*/
+        return "leasing";
     }
 
     @RequestMapping(value = "/leasing", method = RequestMethod.POST)
-    public String leasing(@ModelAttribute Time time, @RequestParam(required = false, defaultValue = "false") boolean isPresent) {
-        System.out.println(time.getCode());
+    public String leasing(@RequestParam(required = false, defaultValue = "false") boolean isPresent,
+                          @RequestParam int period,
+                          @RequestParam int ownContribution,
+                          @RequestParam double car) {
+    /*    System.out.println(isPresent);
+        System.out.println(period);
+        System.out.println(ownContribution);
+        System.out.println(car);*/
+        this.leasingService.calculate(period,ownContribution,car);
         return "redirect:/leasing";
     }
 
@@ -57,7 +64,7 @@ public class CommonController {
     @RequestMapping(value = "/najem", method = RequestMethod.GET)
     public String najem(Model model) {
         model.addAttribute("logged", this.sessionObject.isLogged());
-        return "/najem";
+        return "najem";
     }
 
 

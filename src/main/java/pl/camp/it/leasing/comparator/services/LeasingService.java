@@ -24,7 +24,7 @@ public class LeasingService implements ILeasingService {
     }
 
     @Override
-    public double Calculate(int code, int ownContribution, double price) {
+    public double calculate(int code, int ownContribution, double price) {
         double result = (1.2*(price-ownContribution))/code;
         return result;
     }

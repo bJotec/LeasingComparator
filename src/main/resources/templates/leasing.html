@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>leasing</title>
+    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="/calculateajax.js"></script>
 </head>
 
 <link rel="stylesheet" href="/main.css/">
@@ -20,42 +22,45 @@
    Długość leasingu
     <br>
     <br>
-    <form method="post">
-    <select>
-       <option th:each="choose: ${time}"
-               th:text="${choose.timePeriod}"
-               th:value="${choose.code}">
+
+    <!--<form method="post">-->
+        <select name="period" id="period">
+            <option th:each="choose: ${time}"
+                    th:text="${choose.timePeriod}"
+                    th:value="${choose.code}">
        </option>
     </select>
 
     <br>
     <br>
     <br>
-
-    <input type="text" th:value= "${calculate.ownContribution}"placeholder="Wkład Własny">
-
+        <input type="text" placeholder="Wkład Własny" name="ownContribution" id="wklad">
     <br>
     <br>
     <br>
-
         <input type="radio" th:each="car: ${car}"
                th:text="${car.brand}"
                th:value="${car.price}"
-               ><br>
+               name="car" id="car">
+        <br>
         <br>
         <br>
 
         <label>Wyrażam zgodę</label>
-        <input type="checkbox" name="isPresent" value="true">
+        <input type="checkbox" name="isPresent" value="true" id="check">
         <br>
         <br>
-        <div th:text="" ></div>
-        <input type="submit" value="OK">
-    </form>
 
+        <input type="submit" value="OK">
+        <div id="divInstallment"></div>
+
+
+ <!--   </form>-->
+    <button onclick="calculate()" >WYLICZ</button>
     <br>
 
-    <div th:text="" th:value= "${calculate.result}" placeholder="Miesięczna Rata"></div></di>
+
+   <!-- <div th:text="" th:value= "${calculate.result}" placeholder="Miesięczna Rata"></div> -->
 
 </div>
 

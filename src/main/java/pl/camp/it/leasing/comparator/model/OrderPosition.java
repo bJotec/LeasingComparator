@@ -8,7 +8,7 @@ public class OrderPosition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Car car;
     private int positionQuantity;
 

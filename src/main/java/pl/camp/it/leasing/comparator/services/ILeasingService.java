@@ -8,5 +8,5 @@ import java.util.List;
 public interface ILeasingService {
     List<Time> getTime();
     List<Car> getCar();
-    double Calculate(int code, int ownContribution, double price);
+    double calculate(int code, int ownContribution, double price);
 }

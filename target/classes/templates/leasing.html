@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="/car.css/">
 <link rel="stylesheet" href="/login.css/">
 
-
 </head>
 <body>
 <div th:replace="fragments.html :: logo" ></div>
@@ -20,8 +19,7 @@
 <div id = "content">
 
    Długość leasingu
-    <br>
-    <br>
+    <br><br>
 
     <!--<form method="post">-->
         <select name="period" id="period">
@@ -31,34 +29,37 @@
        </option>
     </select>
 
-    <br>
-    <br>
-    <br>
+    <br><br><br>
+
         <input type="text" placeholder="Wkład Własny" name="ownContribution" id="wklad">
-    <br>
-    <br>
-    <br>
+
+    <br><br><br>
+
         <input type="radio" th:each="car: ${car}"
                th:text="${car.brand}"
                th:value="${car.price}"
                name="car" id="car">
-        <br>
-        <br>
-        <br>
+        <br><br><br>
 
         <label>Wyrażam zgodę</label>
         <input type="checkbox" name="isPresent" value="true" id="check">
-        <br>
-        <br>
 
-        <input type="submit" value="OK">
-        <div id="divInstallment"></div>
-
+        <br><br>
 
  <!--   </form>-->
     <button onclick="calculate()" >WYLICZ</button>
-    <br>
 
+    <br><br>
+
+    <div>Miesięczna Rata</div>
+
+    <br><br>
+
+    <div id="divInstallment"></div>
+
+    <br><br><br>
+
+    <a href="/order/confirm">Zamów</a>
 
    <!-- <div th:text="" th:value= "${calculate.result}" placeholder="Miesięczna Rata"></div> -->
 

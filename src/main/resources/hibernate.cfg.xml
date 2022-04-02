@@ -14,7 +14,7 @@
 
         <property name="hibernate.show_sql">true</property>
 
-        <property name="hibernate.hbm2ddl.auto">none</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="pl.camp.it.leasing.comparator.model.Address"/>
         <mapping class="pl.camp.it.leasing.comparator.model.User"/>

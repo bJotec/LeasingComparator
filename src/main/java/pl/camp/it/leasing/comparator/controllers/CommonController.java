@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.camp.it.leasing.comparator.model.Time;
+import pl.camp.it.leasing.comparator.model.dto.LeasingDTO;
 import pl.camp.it.leasing.comparator.services.ILeasingService;
 import pl.camp.it.leasing.comparator.session.SessionObject;
 
@@ -43,19 +44,20 @@ public class CommonController {
         model.addAttribute("time", this.leasingService.getTime());
         model.addAttribute("logged", this.sessionObject.isLogged());
         model.addAttribute("car", this.leasingService.getCar());
-       /* model.addAttribute("calculate", this.leasingService.Calculate(code,ownContribution, price));*/
+
         return "leasing";
     }
+
 
     @RequestMapping(value = "/leasing", method = RequestMethod.POST)
     public String leasing(@RequestParam(required = false, defaultValue = "false") boolean isPresent,
                           @RequestParam int period,
                           @RequestParam int ownContribution,
                           @RequestParam double car) {
-    /*    System.out.println(isPresent);
+        System.out.println(isPresent);
         System.out.println(period);
         System.out.println(ownContribution);
-        System.out.println(car);*/
+        System.out.println(car);
         this.leasingService.calculate(period,ownContribution,car);
         return "redirect:/leasing";
     }

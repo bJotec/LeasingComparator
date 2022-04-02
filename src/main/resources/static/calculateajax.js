@@ -8,8 +8,6 @@ function calculate() {
 
      var check = $("#check").is(':checked');
 
-/*var installment = (1.2*(car-wklad))/lenght) ;*/
-
 
         var object = {
 
@@ -27,8 +25,8 @@ function calculate() {
             data: JSON.stringify(object)
         })
         .done(res => {
-                 $('#divInstallment').html(res.installment);
-             
+                 $('#divInstallment').html(res.calculateLeasing);
+
                /*  alert(res.installment);
 */
         });

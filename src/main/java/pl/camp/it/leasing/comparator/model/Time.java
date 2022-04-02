@@ -14,12 +14,14 @@ public class Time {
     private int timePeriod;
     private int code;
     private int ownContribution;
+    private double calculateLeasing;
 
-    public Time(int id, int timePeriod, int code, int ownContribution) {
+    public Time(int id, int timePeriod, int code, int ownContribution, double calculateLeasing) {
         this.id = id;
         this.timePeriod = timePeriod;
         this.code = code;
         this.ownContribution = ownContribution;
+        this.calculateLeasing = calculateLeasing;
     }
 
     public Time() {
@@ -55,5 +57,13 @@ public class Time {
 
     public void setOwnContribution(int ownContribution) {
         this.ownContribution = ownContribution;
+    }
+
+    public double getCalculateLeasing() {
+        return calculateLeasing;
+    }
+
+    public void setCalculateLeasing(double calculateLeasing) {
+        this.calculateLeasing = calculateLeasing;
     }
 }

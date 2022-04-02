@@ -47,8 +47,8 @@ public class OrderController {
             return "redirect:/main";
         }
         model.addAttribute("logged", this.sessionObject.isLogged());
-        model.addAttribute("cart", this.sessionObject.getCart());
-        /*model.addAttribute("sum", this.sessionObject.getCart().calculateSum());*/
+       /* model.addAttribute("cart", this.sessionObject.getCart());
+        model.addAttribute("sum", this.sessionObject.getCart().calculateSum());*/
         return "/orders";
     }
 }

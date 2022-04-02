@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 import pl.camp.it.leasing.comparator.model.Cart;
 import pl.camp.it.leasing.comparator.model.Order;
+import pl.camp.it.leasing.comparator.model.Time;
 import pl.camp.it.leasing.comparator.model.User;
 
 @Component
@@ -12,7 +13,7 @@ import pl.camp.it.leasing.comparator.model.User;
 public class SessionObject {
     private User user = null ;
     private Order order = null ;
-    private Cart cart = new Cart();
+    private Time time = new Time();
 
     public boolean isLogged() {
         return this.user != null;
@@ -26,12 +27,12 @@ public class SessionObject {
         this.user = user;
     }
 
-    public Cart getCart() {
-        return cart;
+    public Time getTime() {
+        return time;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setTime(Time time) {
+        this.time = time;
     }
 
     public Order getOrder() {return order;}

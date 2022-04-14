@@ -31,7 +31,7 @@ public class OrderService implements IOrderService {
         order.setAddress(address);
         order.setUser(this.sessionObject.getUser());
 
-        order.setInstallment(this.sessionObject.getOrder().getInstallment());
+        order.setTime(this.sessionObject.getTime());
 
         order.setStatus(Order.Status.NEW);
         this.orderDAO.addOrder(order);

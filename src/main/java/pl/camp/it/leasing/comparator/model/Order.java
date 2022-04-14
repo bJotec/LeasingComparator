@@ -15,16 +15,17 @@ public class Order {
     @ManyToOne (fetch = FetchType.EAGER)
     private User user;
 
-    private double installment;
+    @ManyToOne (fetch = FetchType.EAGER)
+    private Time time;
 
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public Order(int id, Address address, User user, double installment, Status status) {
+    public Order(int id, Address address, User user, Time time, Status status) {
         this.id = id;
         this.address = address;
         this.user = user;
-        this.installment = installment;
+        this.time = time;
         this.status = status;
     }
 
@@ -68,12 +69,12 @@ public class Order {
         this.status = status;
     }
 
-    public double getInstallment() {
-        return installment;
+    public Time getTime() {
+        return time;
     }
 
-    public void setInstallment(double installment) {
-        this.installment = installment;
+    public void setTime(Time time) {
+        this.time = time;
     }
 
     public enum Status {

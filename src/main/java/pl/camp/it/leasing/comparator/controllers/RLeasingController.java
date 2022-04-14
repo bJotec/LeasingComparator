@@ -25,6 +25,7 @@ public class RLeasingController {
         System.out.println(leasingDTO.isCheck());
 
         Time time = new Time();
+        time.setTimePeriod(12);
 
         time.setCalculateLeasing(this.leasingService.calculate(leasingDTO.getLenght(),leasingDTO.getWklad(),leasingDTO.getCar()));
 

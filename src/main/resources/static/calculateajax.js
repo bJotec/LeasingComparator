@@ -4,7 +4,8 @@ function calculate() {
 
     var wklad = $("#wklad").val();
 
-    var car = $("#car").val();
+    //var car = $("#car").val();
+    var car = document.querySelector("input[name=car]:checked").value;
 
      var check = $("#check").is(':checked');
 

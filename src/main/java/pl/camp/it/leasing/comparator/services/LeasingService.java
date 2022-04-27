@@ -28,4 +28,9 @@ public class LeasingService implements ILeasingService {
 
         return 1.2*((price-ownContribution)/code);
     }
+
+    @Override
+    public double rateConvert(double pln, double mid) {
+        return Math.round((pln/mid) * 100.0) / 100.0;
+    }
 }

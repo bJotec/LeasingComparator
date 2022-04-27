@@ -9,4 +9,5 @@ public interface ILeasingService {
     List<Time> getTime();
     List<Car> getCar();
     double calculate(int code, int ownContribution, double price);
+    double rateConvert(double pln, double mid);
 }

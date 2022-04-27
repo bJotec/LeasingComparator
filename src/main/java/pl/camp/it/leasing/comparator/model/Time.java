@@ -15,13 +15,15 @@ public class Time {
     private int code;
     private int ownContribution;
     private double calculateLeasing;
+    private double convertRate;
 
-    public Time(int id, int timePeriod, int code, int ownContribution, double calculateLeasing) {
+    public Time(int id, int timePeriod, int code, int ownContribution, double calculateLeasing, double convertRate) {
         this.id = id;
         this.timePeriod = timePeriod;
         this.code = code;
         this.ownContribution = ownContribution;
         this.calculateLeasing = calculateLeasing;
+        this.convertRate = convertRate;
     }
 
     public Time() {
@@ -65,5 +67,13 @@ public class Time {
 
     public void setCalculateLeasing(double calculateLeasing) {
         this.calculateLeasing = calculateLeasing;
+    }
+
+    public double getConvertRate() {
+        return convertRate;
+    }
+
+    public void setConvertRate(double convertRate) {
+        this.convertRate = convertRate;
     }
 }

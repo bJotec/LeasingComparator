@@ -27,6 +27,7 @@ function calculate() {
         })
         .done(res => {
                  $('#divInstallment').html(res.calculateLeasing);
+                 $('#valueChf').html(res.convertRate);
 
                /*  alert(res.installment);
 */
